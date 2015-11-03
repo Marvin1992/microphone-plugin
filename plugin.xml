@@ -29,7 +29,6 @@
             <uses-permission android:name="android.permission.RECORD_AUDIO"/>
         </config-file>     
 
-        <source-file src="src/android/MicrophoneVolume.java" 
-                    target-dir="src/com/microphone/getvolume"/>
+        <source-file src="src/android/Microphone.java" target-dir="src/com/microphone/getvolume"/>
     </platform>          
 </plugin>
