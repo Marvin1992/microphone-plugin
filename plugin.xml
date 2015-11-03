@@ -11,9 +11,10 @@
     <author>Marvin Baumgart</author>
     <license>MIT</license>
     <keywords>Ionic, Plugin, Audio, Sound, Volume, Mic, Microphone</keywords>
+    <repo>https://github.com/Marvin1992/microphone-plugin.git</repo>
     
     <!-- JavaScript Module -->
-    <js-module src="www/microphone.js" name="MicrophoneVolume">
+    <js-module src="www/microphone.js" name="microphone">
         <clobbers target="navigator.microphone" />
     </js-module>
 

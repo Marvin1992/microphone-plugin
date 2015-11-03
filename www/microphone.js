@@ -1,3 +1,4 @@
+var exec = require('cordova/exec');
 var microphoneVolume = {
     start: function(success, error) {
  		cordova.exec(successCallback, errorCallback, 'MicroPhone', 'start', []); 

@@ -63,7 +63,6 @@ public class MicroPhone extends CordovaPlugin
  
     private void read(CallbackContext callbackContext) throws JSONException
     {
-
       JSONObject returnObj = new JSONObject();
     
       double amplitude = 0;
