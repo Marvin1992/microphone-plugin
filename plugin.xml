@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android" 
+        id="com.microphone.get-volume" 
+        version="0.0.1">  
+
+    <!-- Information -->
+    <name>MicVolume</name>
+    <description>Reads microphone volume from device</description>
+    <author>Marvin Baumgart</author>
+    <license>MIT</license>
+    <keywords>Ionic, Plugin, Audio, Sound, Volume, Mic, Microphone</keywords>
+    
+    <!-- JavaScript Module -->
+    <js-module src="www/microphone.js" name="MicrophoneVolume">
+        <clobbers target="navigator.microphone" />
+    </js-module>
+
+    <!-- Android Platform -->
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <feature name="MicrophonePlugin">
+                <param name="android-package" value="com.microphone.getvolume"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+        </config-file>     
+
+        <source-file src="src/android/MicrophoneVolume.java"/>
+    </platform>          
+</plugin>
