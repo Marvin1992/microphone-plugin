@@ -85,8 +85,3 @@ public class MicroPhone extends CordovaPlugin
       callbackContext.success();
     } 
 }
-
-
-
- 
-
