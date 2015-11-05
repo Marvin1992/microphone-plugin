@@ -13,9 +13,11 @@
     <keywords>Ionic, Plugin, Audio, Sound, Volume, Mic, Microphone</keywords>
     <repo>https://github.com/Marvin1992/microphone-plugin.git</repo>
 
+    <!--
     <engines>
         <engine name="cordova" version=">=3.6.0" />
     </engines>
+    -->
     
     <!-- JavaScript Module -->
 <!--
@@ -23,15 +25,18 @@
         <clobbers target="window.microphone" />
     </js-module>
 -->
-    <js-module src="www/microphone.js" name="microphone">
-        <clobbers target="Microphone" />
-    </js-module>
 
     <!-- Android Platform -->
     <platform name="android">
+        <js-module src="www/microphone.js" name="microphone">
+            <runs/>
+            <clobbers target="cordova.plugins.Microphone" />
+        </js-module>
+
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="MicrophonePlugin">
                 <param name="android-package" value="com.microphone.getvolume"/>
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 
