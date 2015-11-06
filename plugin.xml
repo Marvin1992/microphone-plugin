@@ -45,5 +45,30 @@
         </config-file>     
 
         <source-file src="src/android/Microphone.java" target-dir="src/com/microphone/getvolume"/>
-    </platform>          
+    </platform>     
+
+
+    <!-- windows8 -->
+    <platform name="windows8">
+        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
+            <DeviceCapability Name="microphone" />
+        </config-file>
+
+        <js-module src="www/microphone.js" name="microphone">
+            <clobbers target="navigator.microphone" />
+        </js-module>
+    </platform>
+
+
+    <!-- windows universal apps (Windows 8.1, Windows Phone 8.1, Windows 8.0) -->
+    <platform name="windows">
+        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
+            <DeviceCapability Name="microphone" />
+        </config-file>
+
+
+        <js-module src="www/microphone.js" name="microphone">
+            <clobbers target="navigator.microphone" />
+        </js-module>
+    </platform>     
 </plugin>
