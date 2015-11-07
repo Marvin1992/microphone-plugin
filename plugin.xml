@@ -26,12 +26,24 @@
     </js-module>
 -->
 
-    <!-- Android Platform -->
+    <js-module src="www/microphone.js" name="microphone">
+        <!--<runs/>
+        <clobbers target="cordova.plugins.Microphone" />-->
+        <clobbers target="probe" />
+    </js-module>
+
+
+    <!-- Android Platform 
     <platform name="android">
-        <js-module src="www/microphone.js" name="microphone">
-            <runs/>
-            <clobbers target="cordova.plugins.Microphone" />
-        </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="probe">
+          <param name="android-package" value="com.microphone.getvolume"/>
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+
+    <platform name="android">
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="MicrophonePlugin">
@@ -39,36 +51,13 @@
                 <param name="onload" value="true" />
             </feature>
         </config-file>
+    -->
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.RECORD_AUDIO"/>
         </config-file>     
 
         <source-file src="src/android/Microphone.java" target-dir="src/com/microphone/getvolume"/>
-    </platform>     
+    </platform>    
 
-
-    <!-- windows8 -->
-    <platform name="windows8">
-        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
-            <DeviceCapability Name="microphone" />
-        </config-file>
-
-        <js-module src="www/microphone.js" name="microphone">
-            <clobbers target="navigator.microphone" />
-        </js-module>
-    </platform>
-
-
-    <!-- windows universal apps (Windows 8.1, Windows Phone 8.1, Windows 8.0) -->
-    <platform name="windows">
-        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
-            <DeviceCapability Name="microphone" />
-        </config-file>
-
-
-        <js-module src="www/microphone.js" name="microphone">
-            <clobbers target="navigator.microphone" />
-        </js-module>
-    </platform>     
 </plugin>
