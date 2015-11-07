@@ -33,7 +33,7 @@
     </js-module>
 
 
-    <!-- Android Platform 
+    <!-- Android Platform -->
     <platform name="android">
       <config-file target="res/xml/config.xml" parent="/*">
         <feature name="probe">
@@ -42,7 +42,7 @@
         </feature>
       </config-file>
 
-
+    <!--
     <platform name="android">
 
         <config-file target="res/xml/config.xml" parent="/*">
